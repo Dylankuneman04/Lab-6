@@ -3,17 +3,14 @@
 
 int search(int numbers[], int low, int high, int value) 
 {
-	if ((high <= low) && (numbers[low] == value)) {
-		return low;
-	}
-	else if (high <= low){
-		return -1;
-	}
 	if (numbers[high] == value) {
 		return high;
 	}
 	if (numbers[low] == value) {
 		return low;
+	}
+	if (high <= low){
+		return -1;
 	}
 	else {
 		return search(numbers,low + 1, high - 1, value);
